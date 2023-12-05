@@ -1,13 +1,8 @@
 import React,{useState} from 'react';
+import TicTacToe from './component/TicTacToe';
 import './App.css';
-import WeatherCard from './component/WeatherCard';
 
 
-type dataProp = {
-  main:{
-    temp: number
-  }
-}
 function App() {
 
 
@@ -15,7 +10,7 @@ function App() {
 
   return (
     <div className="App">
-      
+      <TicTacToe/>
     </div>
   );
 }
