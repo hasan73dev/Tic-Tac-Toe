@@ -4,7 +4,7 @@ import WeatherCard from './component/WeatherCard';
 import { apiKey } from './wheather';
 
 
-
+console.log("bir gun")
 type dataProp = {
   main:{
     temp: number
@@ -31,3 +31,6 @@ const SearchCity = (e:React.KeyboardEvent<HTMLInputElement>) =>{
 }
 
 export default App;
+
+
+///dfdsfds
