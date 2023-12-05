@@ -4,7 +4,7 @@ import React,{useState,useRef} from 'react';
 const options = ["","","","","","","","",""]
 export default function TicTacToe() {
   
-
+  const [counter,setCounter] = useState(0);
   const [turn,setTurn] = useState("x")
   const [over,setOver] = useState(false)
   const [winner, setWinner] = useState("")
@@ -19,7 +19,8 @@ export default function TicTacToe() {
     [2, 4, 6]
   ])
 
-  const checkWinner = () =>{
+  const checkWinner = () =>{     
+
       for(let i = 0; i < winning.length; i++){
         const conditions = winning[i];
         const first = options[conditions[0]]
@@ -31,18 +32,21 @@ export default function TicTacToe() {
         }
 
         if(first === second && second === third){
-          console.log(turn + " kazandi");
+         // console.log(turn + " kazandi");
           setWinner(turn);
-          setOver(true)
+          setOver(true);
+          return
           }
-
          
-          /*else if(first !== second && second !== third){
-            setOver(true)
-            setWinner("nobody")
-          }*/
+       
+    
       }
-
+      if(options.every(option => option !== "") && over == false){
+        setWinner("Nobody")
+        setOver(true)
+      }
+      
+      
   }
     const clicked = (e:React.MouseEvent<HTMLDivElement, MouseEvent>,index:number) => {
       if(options[index] === "" && over === false){
